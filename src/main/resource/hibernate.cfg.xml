@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- Database connection settings -->
+        <property name="connection.driver_class"></property>
+        <property name="connection.url"></property>
+        <property name="connection.username"></property>
+        <property name="connection.password"></property>
+
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size"></property>
+
+        <!-- SQL dialect -->
+        <property name="hibernate.dialect"></property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql"></property>
+        
+		<!-- Esquema de criacao -->
+		<property name="hbm2ddl.auto"></property>
+        <!-- <property name="hibernate.current_session_context_class">thread</property> -->
+        <property name="hibernate.current_session_context_class"></property>
+
+        <mapping class="SEU.PACKAGE.SUA_CLASSE"/>
+        
+		<!-- <class-cache usage="read-write" class="br.com.cagece.sgp.common.btp.BtpAuditoria"/> -->
+
+		<!-- Configura��o do envers -->
+        <listener class="org.hibernate.envers.event.AuditEventListener" type="post-insert" />
+        <listener class="org.hibernate.envers.event.AuditEventListener" type="post-update" />
+        <listener class="org.hibernate.envers.event.AuditEventListener" type="post-delete" />
+        <listener class="org.hibernate.envers.event.AuditEventListener" type="pre-collection-update" />
+        <listener class="org.hibernate.envers.event.AuditEventListener" type="pre-collection-remove" />
+        <listener class="org.hibernate.envers.event.AuditEventListener" type="post-collection-recreate" />
+        <!-- Configura��o do envers -->
+        
+    </session-factory>
+
+</hibernate-configuration>
