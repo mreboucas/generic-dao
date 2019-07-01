@@ -1,1 +1,9 @@
+/classes/
 /target/
+bin/
+.settings
+.classpath
+.project
+.svn
+*.class
+*.log
